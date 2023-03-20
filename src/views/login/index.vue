@@ -22,9 +22,9 @@ function login() {
           username: loginData.username,
           password: loginData.password,
         });
-        router.push({ path: "/" });
         setLocalStorage("token", res.data.token);
         setLocalStorage("authority", res.data.authority);
+        router.push({ path: "/" });
       } else {
         return false;
       }

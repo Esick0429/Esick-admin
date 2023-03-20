@@ -28,6 +28,13 @@ function createService() {
           case 200:
             // code === 0 代表没有错误
             return apiData;
+          case 401:
+            // Token 过期时，直接退出登录并强制刷新页面（会重定向到登录页）
+            removeLocalStorage("token");
+            removeLocalStorage("authority");
+            ElMessage.error('请重新登陆')
+            location.reload();
+            break;
           default:
             // 不是正确的 Code
             ElMessage.error(apiData.message || "Error");
@@ -44,8 +51,8 @@ function createService() {
           break;
         case 401:
           // Token 过期时，直接退出登录并强制刷新页面（会重定向到登录页）
-          removeLocalStorage('token')
-          removeLocalStorage('authority')
+          removeLocalStorage("token");
+          removeLocalStorage("authority");
           location.reload();
           break;
         case 403:

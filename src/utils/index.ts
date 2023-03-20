@@ -6,7 +6,7 @@ export const formatDateTime = (time: string | number | Date) => {
     return "N/A"
   }
   const date = new Date(time)
-  return dayjs(date).format("YYYY-MM-DD HH:mm:ss")
+  return dayjs(date).format("YYYY-MM-DD HH:mm")
 }
 
 /** 将全局 CSS 变量导入 JS 中使用 */
