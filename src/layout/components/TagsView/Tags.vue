@@ -98,7 +98,7 @@ const handleCloseTag = function (tag: any) {
     router.push(tagsList.value[tagsList.value.length - 1].path)
   } else {
     // router.push("/index");
-    router.push({ name: 'sadmasMain' })
+    router.push('/')
   }
 }
 //关闭功能按钮
