@@ -66,18 +66,17 @@ const handleDelete = function (row: GetBlogData) {
     })
         .then(async () => {
             // 移除对应索引位置的数据，可以对row进行设置向后台请求删除数据
-            let res = await deletBlogDataApi({ archiveId: row.archiveId })
-            if (res) {
-                if (res.data.status === 200) {
-                    ElMessage({
-                        type: 'success',
-                        message: '删除成功!'
-                    })
-                } else if (res.data.status === 403) {
-                    ElMessage.error('删除失败，权限不足')
-                }
-                await getBlogData()
+            let res:any = await deletBlogDataApi({ archiveId: row.archiveId })
+            if (res.status === 200) {
+                ElMessage({
+                    type: 'success',
+                    message: '删除成功!'
+                })
+            } else if (res.status === 403) {
+                ElMessage.error('删除失败，权限不足')
             }
+            await getBlogData()
+
         })
         .catch((err) => {
             console.log(err)

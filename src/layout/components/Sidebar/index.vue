@@ -24,7 +24,6 @@ const isCollapse = ref(false)
 
 <template>
   <div>
-    <SidebarLogo :collapse="isCollapse" />
     <el-scrollbar wrap-class="scrollbar-wrapper">
       <el-menu :default-active="activeMenu" :collapse="isCollapse" :background-color="v3SidebarMenuBgColor"
         :text-color="v3SidebarMenuTextColor" :active-text-color="v3SidebarMenuActiveTextColor" :unique-opened="true"
@@ -47,6 +46,12 @@ const isCollapse = ref(false)
     height: 100%;
     background-color: var(--v3-sidebar-menu-tip-line-bg-color);
   }
+}
+
+.side-title {
+  height: var(--v3-header-height);
+  background-color: rgb(50, 65, 87);
+  color: #eee;
 }
 
 .has-logo {

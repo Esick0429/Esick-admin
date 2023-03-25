@@ -8,3 +8,10 @@ export function loginApi(data: Login.ILoginRequestData) {
     data,
   });
 }
+
+export function getUserInfo(){
+  return request({
+    url: "getUserInfo",
+    method: "get"
+  });
+}

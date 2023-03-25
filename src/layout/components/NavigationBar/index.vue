@@ -21,6 +21,7 @@ const logout = () => {
 
 <template>
   <div class="navigation-bar">
+    <div class="title">Esick Admin</div>
     <div class="right-menu">
       <el-dropdown class="right-menu-item">
         <div class="right-menu-avatar">
@@ -44,8 +45,16 @@ const logout = () => {
   height: var(--v3-navigationbar-height);
   overflow: hidden;
   background-color: #242f42;
+  display: flex;
+  justify-content: space-between;
+  color: #eee;
+  .title{
+    line-height: var(--v3-navigationbar-height);
+    font-size: 32px;
+    width: 220px;
+    text-align: center;
+  }
   .right-menu {
-    float: right;
     margin-right: 10px;
     height: 100%;
     display: flex;

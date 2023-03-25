@@ -11,9 +11,9 @@ export function creatBlogDataApi(data: Blog.CreateBlogRequestData) {
 }
 
 /** 删 */
-export function deletBlogDataApi(id: string) {
+export function deletBlogDataApi(data:{archiveId:string}) {  
   return request({
-    url: `deleteArchive?${id}`,
+    url: `deleteArchive?archiveId=${data.archiveId}`,
     method: "delete"
   })
 }

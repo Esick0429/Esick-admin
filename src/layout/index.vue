@@ -2,13 +2,13 @@
 import { AppMain, Sidebar, NavigationBar, TagsView } from "./components"
 </script>
 <template>
-  <div class="app-wrapper">
+  <div class="app-wrapper flex-column">
     <div>
-      <Sidebar class="sidebar-container" />
+      <NavigationBar />
     </div>
-    <div class="right-container">
+    <div class="down-container">
       <div>
-        <NavigationBar />
+        <Sidebar class="sidebar-container" />
         <TagsView />
       </div>
       <AppMain />
@@ -37,7 +37,8 @@ import { AppMain, Sidebar, NavigationBar, TagsView } from "./components"
   z-index: 1001;
   overflow: hidden;
 }
-.right-container{
-  flex: 1;
+
+.down-container {
+  display: flex
 }
 </style>

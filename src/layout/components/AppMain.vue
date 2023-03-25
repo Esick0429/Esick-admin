@@ -10,11 +10,9 @@ console.log(key);
 <template>
   <section class="app-main">
     <router-view v-slot="{ Component }">
-      <!-- <transition name="fade-transform" mode="out-in"> -->
-        <!-- <keep-alive> -->
+      <Transition name="fade">
         <component :is="Component" :key="key" />
-        <!-- </keep-alive> -->
-      <!-- </transition> -->
+      </transition>
     </router-view>
   </section>
 </template>
